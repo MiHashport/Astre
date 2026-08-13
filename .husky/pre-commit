@@ -1,3 +1,3 @@
 #!/bin/sh
-cd nevo_frontend
+cd astre_frontend
 npx lint-staged

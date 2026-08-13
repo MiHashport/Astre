@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nevo',
+  title: 'Astre',
   description:
-    'Nevo is an open-source donation platform built on Stellar. See /plan for the implementation plan.',
+    'Astre is an open-source donation platform built on Stellar. See /plan for the implementation plan.',
 };
 
 export const viewport: Viewport = {

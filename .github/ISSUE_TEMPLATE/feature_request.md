@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new feature or improvement for Nevo
+about: Suggest a new feature or improvement for Astre
 title: "[Feature] <short description>"
 labels: enhancement
 assignees: ""
@@ -10,9 +10,9 @@ assignees: ""
 
 Which layer would this feature primarily touch? (check one)
 
-- [ ] `nevo_frontend` — Next.js frontend
-- [ ] `nevo_server` — NestJS backend API
-- [ ] `nevo_contract` — Soroban smart contract (Rust)
+- [ ] `astre_frontend` — Next.js frontend
+- [ ] `astre_server` — NestJS backend API
+- [ ] `astre_contract` — Soroban smart contract (Rust)
 - [ ] Other / cross-layer (please explain below)
 
 > **Note:** Per the project's contribution convention, each PR may only modify a single layer.

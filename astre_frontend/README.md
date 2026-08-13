@@ -1,14 +1,14 @@
-# Nevo Frontend
+# Astre Frontend
 
-The frontend for Nevo — an open-source on-chain donation platform built on the Stellar blockchain. This is a Next.js 15 application using the App Router, Tailwind CSS, Zustand for state management, and TypeScript.
+The frontend for Astre — an open-source on-chain donation platform built on the Stellar blockchain. This is a Next.js 15 application using the App Router, Tailwind CSS, Zustand for state management, and TypeScript.
 
 ## Monorepo Context
 
-Nevo is organized as a monorepo with three layers:
+Astre is organized as a monorepo with three layers:
 
-- `nevo_frontend/` — This directory (Next.js frontend)
-- `nevo_server/` — NestJS backend API
-- `nevo_contract/` — Soroban smart contract (Rust)
+- `astre_frontend/` — This directory (Next.js frontend)
+- `astre_server/` — NestJS backend API
+- `astre_contract/` — Soroban smart contract (Rust)
 
 This layer handles the user interface, wallet connections via Freighter, and interactions with the backend API and Stellar network.
 
@@ -20,14 +20,14 @@ This layer handles the user interface, wallet connections via Freighter, and int
 
 ## Environment Variables
 
-Create a `.env.local` file in the `nevo_frontend/` directory with the following variables:
+Create a `.env.local` file in the `astre_frontend/` directory with the following variables:
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
 NEXT_PUBLIC_STELLAR_NETWORK=testnet
 ```
 
-- `NEXT_PUBLIC_API_BASE_URL` — URL of the Nevo backend API (default: `http://localhost:3001` for local development)
+- `NEXT_PUBLIC_API_BASE_URL` — URL of the Astre backend API (default: `http://localhost:3001` for local development)
 - `NEXT_PUBLIC_STELLAR_NETWORK` — Stellar network to connect to (`testnet` for development, `pubnet` for production)
 
 ## Setting Up Freighter Wallet for Local Development

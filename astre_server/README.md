@@ -74,7 +74,7 @@ $ npm install
 $ cp .env.example .env   # then edit the DB_* variables
 
 # 3. create an empty database matching that connection, e.g.
-$ createdb nevo
+$ createdb astre
 
 # 4. apply all existing migrations
 $ npm run migration:run

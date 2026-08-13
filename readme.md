@@ -1,12 +1,12 @@
-# Nevo
+# Astre
 
-[![CI](https://github.com/Web3Novalabs/Nevo/actions/workflows/ci.yml/badge.svg)](https://github.com/Web3Novalabs/Nevo/actions/workflows/ci.yml)
+[![CI](https://github.com/MiHashport/Astre/actions/workflows/ci.yml/badge.svg)](https://github.com/MiHashport/Astre/actions/workflows/ci.yml)
 
-**Nevo** is an open-source donation platform built on Stellar, designed to make fundraising transparent, secure, and efficient through blockchain technology.
+**Astre** is an open-source donation platform built on Stellar, designed to make fundraising transparent, secure, and efficient through blockchain technology.
 
 ## Overview
 
-Nevo enables individuals, communities, and organizations to create and manage donation pools on-chain. By leveraging Stellar’s fast transactions and low fees, Nevo provides a seamless way to collect, track, and distribute funds with full transparency.
+Astre enables individuals, communities, and organizations to create and manage donation pools on-chain. By leveraging Stellar’s fast transactions and low fees, Astre provides a seamless way to collect, track, and distribute funds with full transparency.
 
 ## Features
 
@@ -37,7 +37,7 @@ Nevo enables individuals, communities, and organizations to create and manage do
 * Secure withdrawal mechanism for pool owners
 * Funds are accessible according to predefined rules
 
-## Why Nevo?
+## Why Astre?
 
 ### Transparency
 
@@ -88,7 +88,7 @@ This project is open-source and available under the MIT License.
 
 ## Vision
 
-Nevo aims to redefine how donations are managed by making them:
+Astre aims to redefine how donations are managed by making them:
 
 * Trustless
 * Transparent
@@ -96,8 +96,8 @@ Nevo aims to redefine how donations are managed by making them:
 
 ## Status
 
-This repository is currently a **skeleton** — `nevo_contract`, `nevo_server`,
-and `nevo_frontend` each contain only their base framework scaffold. The full
+This repository is currently a **skeleton** — `astre_contract`, `astre_server`,
+and `astre_frontend` each contain only their base framework scaffold. The full
 implementation plan, including design decisions and the build order for each
 layer, lives in [`/plan`](./plan/01-architecture-and-design.md).
 
@@ -105,7 +105,7 @@ layer, lives in [`/plan`](./plan/01-architecture-and-design.md).
 
 - [`/plan`](./plan/01-architecture-and-design.md) — architecture, design
   decisions, and the implementation plan for all three layers.
-- [Backend server (nevo_server)](./nevo_server/README.md) — env vars (see `.env.example`), local PostgreSQL setup, and `migration:generate`/`migration:run`/`migration:revert` scripts.
+- [Backend server (astre_server)](./astre_server/README.md) — env vars (see `.env.example`), local PostgreSQL setup, and `migration:generate`/`migration:run`/`migration:revert` scripts.
 
 ---
 

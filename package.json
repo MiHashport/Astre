@@ -1,5 +1,5 @@
 {
-  "name": "nevo",
+  "name": "astre",
   "private": true,
   "scripts": {
     "prepare": "husky"

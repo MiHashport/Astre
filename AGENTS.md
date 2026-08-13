@@ -1,34 +1,34 @@
-# AGENTS.md — Nevo Contributor Guide for AI Agents
+# AGENTS.md — Astre Contributor Guide for AI Agents
 
-This document is for AI agents contributing to the Nevo repository. Read it fully before making any changes.
+This document is for AI agents contributing to the Astre repository. Read it fully before making any changes.
 
 ---
 
-## What is Nevo?
+## What is Astre?
 
-Nevo is an open-source on-chain donation platform built on the Stellar blockchain. It lets anyone create transparent fundraising pools where every contribution is recorded on-chain and withdrawals are handled by a smart contract — no intermediaries.
+Astre is an open-source on-chain donation platform built on the Stellar blockchain. It lets anyone create transparent fundraising pools where every contribution is recorded on-chain and withdrawals are handled by a smart contract — no intermediaries.
 
 **Stack:**
-- `nevo_frontend` — Next.js 15 (App Router), Tailwind CSS, Zustand, TypeScript
-- `nevo_server` — NestJS, TypeScript (REST API backend)
-- `nevo_contract` — Soroban smart contract (Rust), deployed on Stellar
+- `astre_frontend` — Next.js 15 (App Router), Tailwind CSS, Zustand, TypeScript
+- `astre_server` — NestJS, TypeScript (REST API backend)
+- `astre_contract` — Soroban smart contract (Rust), deployed on Stellar
 
 ---
 
 ## Project Structure
 
 ```
-Nevo/
-├── nevo_frontend/        # Next.js frontend
+Astre/
+├── astre_frontend/        # Next.js frontend
 │   ├── app/              # Pages (App Router)
 │   ├── components/       # Shared UI components
 │   ├── hooks/            # Custom React hooks
 │   ├── lib/              # Utilities (api-client, stellar, validation, etc.)
 │   └── src/
 │       └── store/        # Zustand stores (pools, donations, wallet, ui, theme)
-├── nevo_server/          # NestJS backend API
+├── astre_server/          # NestJS backend API
 │   └── src/              # Controllers, services, modules
-├── nevo_contract/        # Soroban smart contract
+├── astre_contract/        # Soroban smart contract
 │   └── contracts/        # Contract source (Rust)
 ├── .github/workflows/    # CI (ci.yml) and CD (cd.yml)
 └── .husky/               # Git hooks (pre-commit, pre-push)
@@ -48,13 +48,13 @@ Then install the deps for your layer:
 
 ```bash
 # Frontend
-cd nevo_frontend && npm install
+cd astre_frontend && npm install
 
 # Backend
-cd nevo_server && npm install
+cd astre_server && npm install
 
 # Contract
-cd nevo_contract  # no npm needed — uses cargo
+cd astre_contract  # no npm needed — uses cargo
 ```
 
 Without the root `npm install`, the pre-commit and pre-push hooks will not run, and broken code can be pushed.
@@ -67,9 +67,9 @@ Without the root `npm install`, the pre-commit and pre-push hooks will not run, 
 
 | Layer    | Directory        |
 |----------|-----------------|
-| Frontend | `nevo_frontend/` |
-| Backend  | `nevo_server/`   |
-| Contract | `nevo_contract/` |
+| Frontend | `astre_frontend/` |
+| Backend  | `astre_server/`   |
+| Contract | `astre_contract/` |
 
 **Never modify multiple layers in a single task.** If your task seems to require cross-layer changes, implement a minimal stub for the dependency (clearly marked with a `// TODO:` comment) and complete only your assigned layer.
 
@@ -77,21 +77,21 @@ Without the root `npm install`, the pre-commit and pre-push hooks will not run, 
 
 ## How to Navigate the Project
 
-### Frontend (`nevo_frontend/`)
+### Frontend (`astre_frontend/`)
 - Pages live in `app/<route>/page.tsx`
 - Shared components are in `components/`
 - Global state (wallet, pools, donations, theme, UI) is in `src/store/`
 - The HTTP client is `lib/api-client.ts` — use `apiClient.get/post/put/delete` for API calls
 - Stellar wallet interactions are in `lib/stellar.ts`
-- Path alias `@/` maps to the `nevo_frontend/` root (e.g. `@/components/Button`)
+- Path alias `@/` maps to the `astre_frontend/` root (e.g. `@/components/Button`)
 
-### Backend (`nevo_server/`)
+### Backend (`astre_server/`)
 - Standard NestJS structure: modules, controllers, services in `src/`
 - Currently minimal — a single module. Add feature modules as needed.
 
-### Contract (`nevo_contract/`)
+### Contract (`astre_contract/`)
 - Soroban (Stellar) smart contract written in Rust
-- Source in `contracts/hello-world/src/` (to be expanded)
+- Source in `contracts/astre_contract/src/` (to be expanded)
 - Tests are unit tests inside the same file (`#[cfg(test)]` blocks)
 - Build target: `wasm32-unknown-unknown`
 
@@ -102,14 +102,14 @@ Without the root `npm install`, the pre-commit and pre-push hooks will not run, 
 Before marking a task complete, verify all of the following for your layer:
 
 ### Frontend
-- [ ] `npm run build` passes with no errors (run from `nevo_frontend/`)
+- [ ] `npm run build` passes with no errors (run from `astre_frontend/`)
 - [ ] The changed page/component renders correctly and is responsive
 - [ ] No TypeScript errors (`npx tsc --noEmit`)
 - [ ] No broken imports (all imported files exist)
 - [ ] No hardcoded mock data introduced as a permanent solution
 
 ### Backend
-- [ ] `npm run build` passes with no errors (run from `nevo_server/`)
+- [ ] `npm run build` passes with no errors (run from `astre_server/`)
 - [ ] No TypeScript errors
 - [ ] New endpoints follow RESTful conventions and return consistent shapes
 
@@ -140,12 +140,12 @@ Before marking a task complete, verify all of the following for your layer:
 
 ## Git Hooks (Enforced Locally)
 
-**pre-commit** — runs `lint-staged` on `nevo_frontend/` staged files (ESLint + Prettier auto-fix).
+**pre-commit** — runs `lint-staged` on `astre_frontend/` staged files (ESLint + Prettier auto-fix).
 
 **pre-push** — runs build checks on any package with changed files:
-- `nevo_frontend/` changes → `npm run build`
-- `nevo_server/` changes → `npm run build`
-- `nevo_contract/` changes → `cargo build` + `cargo test --lib`
+- `astre_frontend/` changes → `npm run build`
+- `astre_server/` changes → `npm run build`
+- `astre_contract/` changes → `cargo build` + `cargo test --lib`
 
 If a hook fails, fix the issue and push again. Do not bypass hooks with `--no-verify`.
 
@@ -190,13 +190,13 @@ CD (`cd.yml`) runs on merge to `main` and deploys the frontend to Vercel.
 
 When you add a package to `package.json` you **must** also update the lock file before pushing. Forgetting this breaks CI immediately — `npm ci` refuses to run when `package.json` and `package-lock.json` are out of sync.
 
-**Frontend (`nevo_frontend/`):**
+**Frontend (`astre_frontend/`):**
 ```bash
 npm install <package>         # updates both package.json and package-lock.json
 npm run build                 # verify it still builds
 ```
 
-**Backend (`nevo_server/`):**
+**Backend (`astre_server/`):**
 ```bash
 npm install <package>         # updates both package.json and package-lock.json
 npm run build                 # verify it still builds

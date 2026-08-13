@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Thank you for your interest in contributing to **Nevo**!
+Thank you for your interest in contributing to **Astre**!
 We welcome contributions from developers of all backgrounds. This document outlines the process and rules to ensure a smooth and consistent contribution workflow.
 
 ---
@@ -14,14 +14,14 @@ We welcome contributions from developers of all backgrounds. This document outli
 Fork the repository to your GitHub account:
 
 ```
-https://github.com/Web3Novalabs/Nevo
+https://github.com/MiHashport/Astre
 ```
 
 ### 2. Clone Your Fork
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Nevo.git
-cd Nevo
+git clone https://github.com/YOUR-USERNAME/Astre.git
+cd Astre
 ```
 
 ### 3. Create a Branch
@@ -198,4 +198,4 @@ git push origin feature/issue-<issue-number>
 
 ---
 
-Thank you for contributing to Nevo 🚀
+Thank you for contributing to Astre 🚀

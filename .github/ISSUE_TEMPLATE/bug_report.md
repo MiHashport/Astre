@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug or unexpected behaviour in Nevo
+about: Report a bug or unexpected behaviour in Astre
 title: "[Bug] <short description>"
 labels: bug
 assignees: ""
@@ -10,9 +10,9 @@ assignees: ""
 
 Which layer does this bug affect? (check one)
 
-- [ ] `nevo_frontend` — Next.js frontend
-- [ ] `nevo_server` — NestJS backend API
-- [ ] `nevo_contract` — Soroban smart contract (Rust)
+- [ ] `astre_frontend` — Next.js frontend
+- [ ] `astre_server` — NestJS backend API
+- [ ] `astre_contract` — Soroban smart contract (Rust)
 - [ ] Other / unsure
 
 ## Description
