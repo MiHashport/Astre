@@ -50,6 +50,11 @@ dist/
 !astre_frontend/README.md
 !astre_server/README.md
 !astre_contract/README.md
+!astre_contract/ERRORS.md
+!astre_contract/EVENT_EMISSION_TESTS.md
+!astre_contract/EVENTS_REFERENCE.md
+!astre_contract/CONFIGURATION_BOUNDS_TESTS.md
+!docs/pools-page.md
 !plan/*.md
 
 # Local plans — not committed, stays on each contributor's machine

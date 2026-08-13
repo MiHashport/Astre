@@ -94,17 +94,11 @@ Astre aims to redefine how donations are managed by making them:
 * Transparent
 * Accessible to anyone
 
-## Status
-
-This repository is currently a **skeleton** — `astre_contract`, `astre_server`,
-and `astre_frontend` each contain only their base framework scaffold. The full
-implementation plan, including design decisions and the build order for each
-layer, lives in [`/plan`](./plan/01-architecture-and-design.md).
-
 ## Documentation
 
 - [`/plan`](./plan/01-architecture-and-design.md) — architecture, design
   decisions, and the implementation plan for all three layers.
+- [Pools page details](./docs/pools-page.md) — browse pools, search, filter categories, and review campaign progress.
 - [Backend server (astre_server)](./astre_server/README.md) — env vars (see `.env.example`), local PostgreSQL setup, and `migration:generate`/`migration:run`/`migration:revert` scripts.
 
 ---
