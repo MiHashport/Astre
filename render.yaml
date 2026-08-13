@@ -5,7 +5,7 @@ services:
     plan: free
     rootDir: astre_server
     buildCommand: npm install && npm run build
-    startCommand: npm run start:prod
+    startCommand: npm run migration:run && npm run start:prod
     envVars:
       - key: DATABASE_URL
         fromDatabase:
