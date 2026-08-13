@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+/* ─── Nevo Design Tokens ─────────────────────────────────────────────────── */
+@theme {
+  /* Brand */
+  --color-brand-50: #eef9f4;
+  --color-brand-100: #d5f0e3;
+  --color-brand-200: #aee1cb;
+  --color-brand-300: #7bcaac;
+  --color-brand-400: #47ae88;
+  --color-brand-500: #27926e; /* primary */
+  --color-brand-600: #1c7459;
+  --color-brand-700: #185d47;
+  --color-brand-800: #154a3a;
+  --color-brand-900: #123d30;
+
+  /* Semantic */
+  --color-success-light: #d1fae5;
+  --color-success: #10b981;
+  --color-success-dark: #065f46;
+
+  --color-error-light: #fee2e2;
+  --color-error: #ef4444;
+  --color-error-dark: #7f1d1d;
+
+  --color-warning-light: #fef3c7;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #78350f;
+
+  /* Neutral surface */
+  --color-surface: #ffffff;
+  --color-surface-raised: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-text-secondary: #6b7280;
+  --color-background: #ffffff;
+
+  /* Typography scale */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+
+  /* Font families (inherit from layout.tsx Geist vars) */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Breakpoints (mobile-first) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ─── Dark mode overrides (class-based, toggled via .dark on <html>) ────── */
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-surface: #0a0a0a;
+  --color-surface-raised: #111827;
+  --color-border: #1f2937;
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+  --color-text-secondary: #9ca3af;
+  --color-background: #0a0a0a;
+}
+
+/* ─── Cross-browser fixes ────────────────────────────────────────────────── */
+
+/* Normalize box-sizing across all browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Safari: prevent tap highlight on interactive elements */
+a,
+button,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Firefox: remove inner border on focused buttons */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Safari/iOS: prevent font size inflation on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Safari: smooth scrolling with momentum on iOS */
+.overflow-y-auto,
+.overflow-y-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Firefox: hide scrollbar arrows, normalize scrollbar width */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* Webkit: style scrollbars to match Firefox */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Safari: ensure backdrop-filter works */
+.backdrop-blur,
+[class*='backdrop-blur'] {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Firefox: gap support fallback for older versions */
+@supports not (gap: 1rem) {
+  .flex {
+    margin: -0.5rem;
+  }
+  .flex > * {
+    margin: 0.5rem;
+  }
+}
+
+/* ─── Base styles ────────────────────────────────────────────────────────── */
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

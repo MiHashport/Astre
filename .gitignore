@@ -1,0 +1,77 @@
+# Rust build artifacts
+target/
+**/target/
+test_snapshots/
+**/test_snapshots/
+# Local Soroban/Stellar settings
+.soroban/
+.stellar/
+
+# OS generated files
+.DS_Store
+**/ .DS_Store
+
+# Node.js (for Next.js frontend and Nest.js backend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js
+.next/
+out/
+build/
+
+# Nest.js
+dist/
+*.log
+
+# Text and Markdown files
+*.txt
+*.md
+!readme.md
+!README.md
+!contribution.md
+!Contribution.md
+!AGENTS.md
+!Agents.md
+!SECURITY.md
+!security.md
+!ERRORS.md
+!EVENT_EMISSION_TESTS.md
+!EVENTS_REFERENCE.md
+!CONFIGURATION_BOUNDS_TESTS.md
+!docs/pools-page.md
+!.github/ISSUE_TEMPLATE/bug_report.md
+!.github/ISSUE_TEMPLATE/feature_request.md
+!.github/PULL_REQUEST_TEMPLATE.md
+!nevo_frontend/README.md
+!nevo_server/README.md
+!nevo_contract/README.md
+!nevo_contract/CONFIGURATION_BOUNDS_TESTS.md
+!nevo_contract/EVENT_EMISSION_TESTS.md
+!nevo_contract/EVENTS_REFERENCE.md
+
+# Local plans — not committed, stays on each contributor's machine
+plans/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
