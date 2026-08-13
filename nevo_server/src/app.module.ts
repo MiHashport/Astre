@@ -1,46 +1,11 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ScheduleModule } from '@nestjs/schedule';
-import { APP_FILTER } from '@nestjs/core';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
-import { AuthModule } from './auth/auth.module.js';
-import { ContractModule } from './contract/contract.module.js';
-import { LoggingMiddleware } from './common/logging.middleware.js';
-import { GlobalExceptionFilter } from './common/global-exception.filter.js';
-import { buildDataSourceOptions } from './db.config.js';
-import { DonationsModule } from './donations/donations.module.js';
-import { PoolsModule } from './pools/pools.module.js';
-import { SyncModule } from './sync/sync.module.js';
-
-import { TransactionsModule } from './transactions/transactions.module.js';
-import { UsersModule } from './users/users.module.js';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    TypeOrmModule.forRoot(buildDataSourceOptions(['dist/migrations/*.js'])),
-    ScheduleModule.forRoot(),
-    AuthModule,
-    ContractModule,
-    DonationsModule,
-    SyncModule,
-    TransactionsModule,
-    PoolsModule,
-    UsersModule,
-  ],
+  imports: [ConfigModule.forRoot({ isGlobal: true })],
   controllers: [AppController],
-  providers: [
-    AppService,
-    {
-      provide: APP_FILTER,
-      useClass: GlobalExceptionFilter,
-    },
-  ],
+  providers: [AppService],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(LoggingMiddleware).forRoutes('*');
-  }
-}
+export class AppModule {}
