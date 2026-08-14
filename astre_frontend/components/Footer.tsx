@@ -10,9 +10,10 @@ export const Footer = () => {
         <div className="flex flex-col items-center md:items-start">
           <Link
             href="/"
-            className="text-xl font-bold text-blue-600 dark:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded"
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded"
           >
-            Astre
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.jpg" alt="Astre" className="h-9 w-auto" />
           </Link>
           <p className="mt-2 text-gray-500 dark:text-gray-400">
             Empowering the Web3 ecosystem.

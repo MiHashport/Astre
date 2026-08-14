@@ -31,9 +31,10 @@ export default function Navbar() {
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
           <Link
             href="/"
-            className="text-lg font-semibold text-[var(--color-text)] transition-colors hover:text-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 rounded"
+            className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 rounded"
           >
-            Astre
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.jpg" alt="Astre" className="h-9 w-auto" />
           </Link>
 
           <div className="hidden items-center gap-6 text-sm lg:flex">

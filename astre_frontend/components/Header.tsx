@@ -16,9 +16,8 @@ export const Header = () => {
             href="/"
             className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 rounded"
           >
-            <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-              Astre
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.jpg" alt="Astre" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
