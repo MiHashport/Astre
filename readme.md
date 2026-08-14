@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/MiHashport/Astre/actions/workflows/ci.yml/badge.svg)](https://github.com/MiHashport/Astre/actions/workflows/ci.yml)
 
-**Website:** [astre-as0vhdapt-muhammad-ismails-projects-8ec44781.vercel.app](https://astre-as0vhdapt-muhammad-ismails-projects-8ec44781.vercel.app/)
+**Website:** [astre-ruddy.vercel.app](https://astre-ruddy.vercel.app/)
 
 **Astre** is an open-source donation platform built on Stellar, designed to make fundraising transparent, secure, and efficient through blockchain technology.
 
