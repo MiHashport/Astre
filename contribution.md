@@ -7,6 +7,29 @@ We welcome contributions from developers of all backgrounds. This document outli
 
 ---
 
+## Phase 1 Issues: Branch from `mvp-phase-1`, Not `main`
+
+`main` already has the full reference implementation deployed and running — there's
+nothing left to build there. Every issue labeled **`phase-1`** is scoped against the
+**`mvp-phase-1`** branch instead, which is reset to a bare skeleton plus the
+[`/plan`](./plan/01-architecture-and-design.md) docs. That's where the real,
+unclaimed work is.
+
+```bash
+git checkout mvp-phase-1
+git checkout -b feature/issue-<issue-number>
+```
+
+**Open your PR against `mvp-phase-1`, not `main`.** A PR opened against `main` for a
+`phase-1` issue will show a confusing diff (it'll look like you're deleting the whole
+app) because `main` isn't the base your branch was built from.
+
+If you get stuck, `main`'s code solves the same problem in full — useful as a reference
+if you want to compare approaches *after* attempting the issue yourself, not as
+something to copy wholesale (the point is to write it yourself).
+
+---
+
 ## Getting Started
 
 ### 1. Fork the Repository
@@ -25,6 +48,8 @@ cd Astre
 ```
 
 ### 3. Create a Branch
+
+For a `phase-1` issue, branch from `mvp-phase-1` (see above). Otherwise:
 
 ```bash
 git checkout -b feature/issue-<issue-number>
